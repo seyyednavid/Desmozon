@@ -1,6 +1,10 @@
 import React from "react";
 
-const Header = () => {
+interface HeaderType {
+  searchProducts:(s:string) => void;
+}
+
+const Header = ({searchProducts}: HeaderType) => {
   return (
     <header>
       <img
@@ -9,6 +13,7 @@ const Header = () => {
       />
 
       <input
+      onChange={(e) =>  searchProducts(e.target.value)}
         type="text"
         placeholder="Search products by description or name"
       ></input>

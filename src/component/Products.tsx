@@ -1,24 +1,20 @@
 import React from "react";
 import { products } from "../types";
+import Product from "./Product";
 
 interface ProductsType {
   products: products;
 }
 
 const Products = ({ products }: ProductsType) => {
-  console.log(products);
   return (
-    <div className="container">
-      {products.map((product) => (
-        <div className="card">
-          <div className="image-container">
-            <img src={product.image} alt={product.title} />
-          </div>
-          <div className="card-body">
-            <p>{product.title}</p>
-          </div>
-        </div>
-      ))}
+    <div className="product-section">
+      <h1>PRODUCTS ({products.length})</h1>
+      <div className="container">
+        {products.map((product) => (
+          <Product key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };
