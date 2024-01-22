@@ -120,6 +120,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow-y: scroll;
 }
 
 .close-btn {
@@ -139,7 +140,6 @@ img {
   .popup {
     width: 70%;
     height: 80%;
-    overflow-y: scroll;
     flex-direction: column;
   }
 
